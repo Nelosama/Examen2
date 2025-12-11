@@ -78,6 +78,14 @@ namespace ProyectoVotoSeguro.Controllers
              var prestamos = await _prestamosService.GetAllPrestamos();
              return Ok(prestamos);
         }
+
+        [HttpGet("vencidos")]
+        [Authorize(Roles = "bibliotecario,admin")]
+        public async Task<IActionResult> GetVencidos()
+        {
+             var vencidos = await _prestamosService.GetPrestamosVencidos();
+             return Ok(vencidos);
+        }
     }
 
     public class CrearPrestamoDto

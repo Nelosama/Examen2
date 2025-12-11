@@ -12,6 +12,8 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<LibrosService>();
 builder.Services.AddScoped<PrestamosService>();
 builder.Services.AddScoped<ReservasService>();
+builder.Services.AddScoped<UsuariosService>();
+builder.Services.AddScoped<ReportesService>();
  
 // Configurar CORS (para que Angular pueda conectarse)
 builder.Services.AddCors(options =>

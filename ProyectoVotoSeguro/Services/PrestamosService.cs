@@ -1,5 +1,6 @@
 using Google.Cloud.Firestore;
 using ProyectoVotoSeguro.Models;
+using ProyectoVotoSeguro.DTOs;
 
 namespace ProyectoVotoSeguro.Services
 {
@@ -112,6 +113,48 @@ namespace ProyectoVotoSeguro.Services
              var collection = _firebaseService.GetCollection(_collectionName);
              var snapshot = await collection.GetSnapshotAsync();
              return snapshot.Documents.Select(d => d.ConvertTo<Prestamo>()).ToList();
+        }
+
+        public async Task<List<PrestamoVencidoDto>> GetPrestamosVencidos()
+        {
+            var collection = _firebaseService.GetCollection(_collectionName);
+            var snapshot = await collection.WhereEqualTo("estado", "activo").GetSnapshotAsync();
+            
+            var overdue = new List<PrestamoVencidoDto>();
+            var now = DateTime.UtcNow;
+
+            foreach (var doc in snapshot.Documents)
+            {
+                var p = doc.ConvertTo<Prestamo>();
+                var dateExpected = p.FechaDevolucionEsperada.ToDateTime();
+                
+                if (dateExpected < now) // overdue
+                {
+                    var diasRetraso = (int)Math.Ceiling((now - dateExpected).TotalDays);
+                    
+                    // Get User
+                    var userDoc = await _firebaseService.GetCollection("usuarios").Document(p.UsuarioId).GetSnapshotAsync();
+                    var userName = "Desconocido";
+                    if (userDoc.Exists)
+                    {
+                        var u = userDoc.ConvertTo<Usuario>();
+                        userName = $"{u.Nombre} {u.Apellido}";
+                    }
+                    
+                    // Get Book
+                    var book = await _librosService.GetLibroById(p.LibroId);
+                    
+                    overdue.Add(new PrestamoVencidoDto
+                    {
+                        PrestamoId = p.Id,
+                        UsuarioNombre = userName,
+                        LibroTitulo = book?.Titulo ?? "Desconocido",
+                        FechaDevolucionEsperada = dateExpected,
+                        DiasRetraso = diasRetraso
+                    });
+                }
+            }
+            return overdue;
         }
     }
 }

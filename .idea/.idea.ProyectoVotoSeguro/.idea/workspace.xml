@@ -10,8 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1aa4c1e0-7999-441d-a9ba-eede3a76e837" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ProyectoVotoSeguro/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ProyectoVotoSeguro/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProyectoVotoSeguro/Services/AuthService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoVotoSeguro/Services/AuthService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVotoSeguro/Controllers/PrestamosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoVotoSeguro/Controllers/PrestamosController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVotoSeguro/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoVotoSeguro/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProyectoVotoSeguro/Services/PrestamosService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProyectoVotoSeguro/Services/PrestamosService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +113,7 @@
       <workItem from="1765241200667" duration="301000" />
       <workItem from="1765425590644" duration="1267000" />
       <workItem from="1765427253014" duration="1177000" />
+      <workItem from="1765429536715" duration="623000" />
     </task>
     <servers />
   </component>

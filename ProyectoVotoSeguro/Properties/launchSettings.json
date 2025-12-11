@@ -17,7 +17,7 @@
       "applicationUrl": "http://localhost:5169",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "GOOGLE_APPLICATION_CREDENTIALS": "C:\\Users\\danic\\Documents\\GitHub\\ProyectoVotoSeguro\\ProyectoVotoSeguro\\Config\\firebase-credentials.json"
+        "GOOGLE_APPLICATION_CREDENTIALS": "C:\\Users\\danic\\Documents\\GitHub\\Examen2\\ProyectoVotoSeguro\\Config\\firebase-credentials.json"
       }
     },
     "https": {
@@ -28,7 +28,7 @@
       "applicationUrl": "https://localhost:7049;http://localhost:5169",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "GOOGLE_APPLICATION_CREDENTIALS": "C:\\Users\\danic\\Documents\\GitHub\\ProyectoVotoSeguro\\ProyectoVotoSeguro\\Config\\firebase-credentials.json"
+        "GOOGLE_APPLICATION_CREDENTIALS": "C:\\Users\\danic\\Documents\\GitHub\\Examen2\\ProyectoVotoSeguro\\Config\\firebase-credentials.json"
       }
     },
     "IIS Express": {

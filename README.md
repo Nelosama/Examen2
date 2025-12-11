@@ -1,33 +1,31 @@
-Rut
+🌐 Examen 2
+👥 Integrantes y Responsabilidades
+🟦 Rut
 
-Creó y organizó la carpeta Models.
+Estructuración de la carpeta Models.
 
-Definió las entidades principales del proyecto.
+Creación de las entidades principales.
 
-Elaboró los DTOs necesarios.
+Desarrollo de los DTOs utilizados por la API.
 
-Apoyó en la estructura general y en la configuración del appsettings.json.
+Apoyo en la configuración base del proyecto.
 
-Harlen
+🟩 Harlen
 
-Creó la carpeta Services.
+Implementación de la carpeta Services.
 
-Implementó la lógica de negocio del proyecto.
+Desarrollo de la lógica de negocio del proyecto.
 
-Desarrolló los métodos para gestionar los datos.
+Creación de métodos para gestión de datos.
 
-Realizó validaciones internas.
+Validaciones internas para asegurar consistencia.
 
-Apoyó en las pruebas usando el archivo .http.
+🟥 Daniel
 
-Daniel
+Configuración y desarrollo de los Controllers.
 
-Creó y configuró los Controllers.
+Implementación de endpoints (GET, POST, PUT, DELETE).
 
-Implementó los endpoints de la API (POST, GET, PUT, DELETE).
+Configuración del archivo Program.cs.
 
-Configuró Program.cs y el arranque del proyecto.
-
-Organizó la estructura final del proyecto y el .gitignore.
-
-Revisó rutas, respuestas y códigos de estado.
+Organización final del proyecto y estructura del repositorio.

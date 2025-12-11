@@ -27,6 +27,16 @@ namespace ProyectoVotoSeguro.Services
 
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(registerDto.Contrasena);
 
+            string rolAsignado = "usuario";
+            if (!string.IsNullOrWhiteSpace(registerDto.Rol))
+            {
+                var rolInput = registerDto.Rol.Trim().ToLower();
+                if (rolInput == "admin" || rolInput == "bibliotecario")
+                {
+                    rolAsignado = rolInput;
+                }
+            }
+
             var usuario = new Usuario
             {
                 Nombre = registerDto.Nombre,
@@ -36,7 +46,7 @@ namespace ProyectoVotoSeguro.Services
                 Edad = registerDto.Edad,
                 NumeroIdentidad = registerDto.NumeroIdentidad,
                 Telefono = registerDto.Telefono,
-                Rol = registerDto.Rol,
+                Rol = rolAsignado,
                 Activo = true,
                 FechaRegistro = Timestamp.FromDateTime(DateTime.UtcNow),
                 Multas = 0
